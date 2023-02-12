@@ -1,16 +1,25 @@
-# This is a sample Python script.
+def validate_input(number):
+    while True:
+        try:
+            input_number = int(input(number))
+        except ValueError:
+            print("number is invalid")
+            continue
+        else:
+            if input_number == 0:
+                print("0 is not allowed")
+            else:
+                return input_number
+                break
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+
+def multiplication(max_range, multiplication_value):
+    for current_range_number in range(1, max_range):
+        answer = current_range_number * multiplication_value
+        print(str(multiplication_value) + " times " + str(current_range_number) + " = " + str(answer))
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+multiplicationValue = validate_input("Enter multiplication number")
+multiplicationRange = validate_input("Enter multiplication range")
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+multiplication(multiplicationRange, multiplicationValue)
